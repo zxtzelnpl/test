@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1"/>
+    <title>Title</title>
+    <style>
+        p{
+            font-size:14px;
+        }
+    </style>
+</head>
+<body style="margin:0;padding:0;width:6.4rem;background:cadetblue">
+    <div style="margin:0;padding:0;width:6.4rem;background:cadetblue;display:flex;align-items: center;justify-content: space-around">
+        <div id="rect" style="width:1rem;height:1rem;background:yellow;"></div>
+        <div id="rect1" style="width:1rem;height:1rem;background:yellow;"></div>
+        <div id="rect2" style="width:1rem;height:1rem;background:yellow;"></div>
+        <div id="rect3" style="width:1rem;height:1rem;background:yellow;"></div>
+        <div id="rect4" style="width:1rem;height:1rem;background:yellow;"></div>
+        <div id="rect5" style="width:1rem;height:1rem;background:yellow;"></div>
+    </div>
+    <div id="myFont">
+        123456789
+    </div>
+
+    <div>
+        <p>(1)、设置前html的fontSize：<span></span></p>
+        <p>(2)、设置前1rem的宽度：<span></span>（浏览器默认字体大小精确值）</p>
+        <p>(3)、html fontSize的设置值：<span></span></p>
+        <p>(4)、设置后html的fontSize：<span></span></p>
+        <p>(5)、1rem目标值：<span></span></p>
+        <p>(6)、1rem实际值：<span></span></p>
+        <p>(7)、6.4rem目标值：<span></span>（屏宽）</p>
+        <p>(8)、6.4rem实际值：<span></span></p>
+        <p>(9)、6.4rem计算值：<span></span>（按公式计算）</p>
+        <p>(10)、6.4rem计算值：<span></span>（按设置后html的fontSize计算）</p>
+        <p>（11）、6.4rem计算值：<span></span>（按html fontSize设置值和浏览器默认字体大小精确值计算）</p>
+    </div>
+</body>
+<script>
+    var spans = document.querySelectorAll("span");
+    var rect = document.getElementById("rect");
+    var myFont = document.getElementById("myFont");
+    var htmlDom = document.documentElement;
+    var bodyDom = document.body;
+    spans[0].innerHTML = getComputedStyle(htmlDom)["font-size"];
+    spans[1].innerHTML = getComputedStyle(rect)["width"];
+
+</script>
+
+<script>
+  var designWidth = 640, rem2px = 100;
+  var d = window.document.createElement('div');
+  d.style.width = '1rem';
+  d.style.display = "none";
+  var head = window.document.getElementsByTagName('head')[0];
+  head.appendChild(d);
+  var defaultFontSize = parseFloat(window.getComputedStyle(d, null).getPropertyValue('width'));
+
+  d.remove();
+  document.documentElement.style.fontSize =
+    window.innerWidth / designWidth * rem2px / defaultFontSize * 100 + '%';
+  // document.documentElement.style.fontSize =
+  //   window.innerWidth / designWidth * rem2px + 'px';
+</script>
+
+
+<script>
+  spans[2].innerHTML = htmlDom.style.fontSize;
+  spans[3].innerHTML = getComputedStyle(htmlDom)["font-size"];
+  // spans[4].innerHTML = getComputedStyle(rect)["width"];
+  spans[5].innerHTML = getComputedStyle(rect)["width"];
+  spans[6].innerHTML = window.innerWidth;
+  spans[7].innerHTML = getComputedStyle(bodyDom)["width"];
+  spans[8].innerHTML = parseInt(getComputedStyle(htmlDom)["font-size"])*6.4;
+</script>
+
+<script>
+  myFont.style="font-size:.12rem";
+  myFont.innerHTML = getComputedStyle(myFont)["font-size"]
+</script>
+</html>

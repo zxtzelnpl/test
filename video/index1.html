@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1"/>
+</head>
+<body>
+    <input id="videoFile" type="file" accept="video/*">
+
+    <span id="span">123456780</span>
+</body>
+<script>
+    document.getElementById('videoFile').addEventListener('change',function(e){
+      alert(e.type)
+    })
+
+    document.getElementById('span').addEventListener('copy',function(e){
+      alert(e.type)
+    })
+</script>
+</html>

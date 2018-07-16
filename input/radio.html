@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>radio</title>
+    <script src="../js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+
+<input TYPE="radio" NAME="aa" value='s' >售
+<input TYPE="radio" NAME="aa" value='z' >租
+<hr>
+<span id='content'>
+   </span>
+</body>
+<script>
+  function to_change(e){
+    console.log(e);
+    var obj  = document.getElementsByName('aa');
+    for(var i=0;i<obj.length;i++){
+      if(obj[i].checked==true){
+        if(obj[i].value=='s'){
+          document.getElementById('content').innerHTML='售售';
+        }else if(obj[i].value=='z'){
+          document.getElementById('content').innerHTML='租租';
+        }
+      }
+    }
+  }
+  document.querySelectorAll('input')[0].addEventListener('focus',to_change)
+  document.querySelectorAll('input')[1].addEventListener('focus',to_change)
+</script>
+</html>

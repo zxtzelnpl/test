@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<div class="w70p ma0" id="winList" style="background: #da390d;padding-top: 10px;">
+    <div class="wp c_11 tac" style="background: #bb2600;padding: 5px 0;">最新中奖名单</div>
+    <div class="scrollBox">
+        <table class="wp tac scrollWrap" border="0" cellspacing="0" cellpadding="0" style="color: #fea82d;">
+            <tr>
+                <td>Data1</td>
+                <td>Data1</td>
+            </tr>
+            <tr>
+                <td>Data2</td>
+                <td>Data2</td>
+            </tr>
+            <tr>
+                <td>Data3</td>
+                <td>Data3</td>
+            </tr>
+            <tr>
+                <td>Data4</td>
+                <td>Data4</td>
+            </tr>
+            <tr>
+                <td>Data4</td>
+                <td>Data4</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+<script src="../../js/jquery-1.9.1.min.js"></script>
+<script src="./Rolling.js"></script>
+<script>
+  rolling({
+    showBox: '.scrollBox',
+    moveBox: 'table',
+    box: 'tr',
+    speed: 5000
+  })
+</script>
+</html>

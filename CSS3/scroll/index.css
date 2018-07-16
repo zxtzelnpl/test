@@ -1,0 +1,7 @@
+.scrollBox {
+  height: 200px;
+  overflow: hidden;
+}
+.scrollBox tr {
+  height: 40px;
+}

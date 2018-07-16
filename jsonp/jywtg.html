@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<script src="../js/md5-min.js"></script>
+<script>
+  var now_stamp = Math.ceil((new Date().getTime())/1000)
+  var _key = 'jgjy' + now_stamp
+  var key = hex_md5(_key)
+
+  var limit = 10
+
+  var data = {
+    now_stamp: now_stamp,
+    key: key,
+    limit: limit,
+    query_start_stamp: 0,
+    query_end_stamp: now_stamp
+  }
+
+  $.ajax(`http://guanwei.zgjy518.com/Disk_read/ec595eaeec302e8b`,{
+    type: "get",
+    async: false,
+    dataType: "jsonp",
+    data:data,
+    success: function (data) {
+      console.log(data);
+    },
+    error: function () {
+      console.log('fail');
+    }
+  });
+</script>
+</html>

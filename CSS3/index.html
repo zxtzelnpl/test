@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .pointer {
+            margin: 0 auto;
+            width: 5rem;
+            height: 5rem;
+            transition: transfrom 2s;
+        }
+
+        .pointer.r80 {
+            transform: rotate(80deg)
+        }
+
+        .pointer.r180 {
+            transform: rotate(180deg)
+        }
+    </style>
+</head>
+<body>
+<div class="TurnTable">
+    <div id="pointer" class="pointer r80">
+        123
+    </div>
+</div>
+</body>
+<script>
+    let pointer = document.getElementById('pointer')
+    pointer.addEventListener('click',function(){
+      pointer.className='pointer r180'
+    })
+</script>
+</html>

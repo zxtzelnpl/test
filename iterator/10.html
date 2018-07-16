@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="list">1</div>
+<div class="list">2</div>
+<div class="list">3</div>
+<div class="list">4</div>
+<div class="list">5</div>
+<div class="list">6</div>
+<div class="list">7</div>
+<div class="list">8</div>
+<div class="list">9</div>
+<div id="change" class="list">10</div>
+</body>
+<script>
+    const lists = document.querySelectorAll('.list');
+    document.getElementById('change').innerHTML = 'change';
+
+    console.log([...lists])
+</script>
+</html>

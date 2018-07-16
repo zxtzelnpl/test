@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        .content {
+            height: 600px;
+            width:200px;
+            position:relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid gray;
+            background-color: #f9eddf;
+        }
+
+        .example {
+            position:absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 600px;
+            background-image:linear-gradient(to bottom, rgba(249, 245, 230, 0.95), rgba(249, 245, 235, 0.6)), linear-gradient(to top, rgba(249, 245, 235, 0.95), rgba(249, 245, 235, 0.6));
+            background-position: top, bottom;
+            background-repeat: no-repeat;
+            background-size: 100% 200px;
+        }
+        ul{
+            height: 600px;
+            width:200px;
+            text-align: center;
+        }
+        li{
+            height:100px;
+            line-height:100px;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="example">
+
+    </div>
+    <ul class="list">
+        <li>AAAAA</li>
+        <li>AAAAA</li>
+        <li>AAAAA</li>
+        <li>AAAAA</li>
+        <li>AAAAA</li>
+        <li>AAAAA</li>
+    </ul>
+</div>
+</body>
+</html>
