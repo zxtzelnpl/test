@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  function getRange(x,y){
+    return Math.floor(Math.random()*(y-x+1))+ x
+  }
+
+  var array = [];
+
+  for(var i=0;i<1000;i++){
+    array.push(getRange(1,20))
+  }
+
+  array.sort(function(a,b){return a-b})
+  console.log(array)
+</script>
+</html>
